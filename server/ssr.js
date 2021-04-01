@@ -7,6 +7,7 @@ const resolve = file => path.resolve(__dirname, file);
 const app = new Koa()
 
 const isDev = process.env.NODE_ENV !== 'production'
+console.log(isDev)
 const router = isDev ? require('./dev.ssr') : require('./server')
 
 app.use(router.routes()).use(router.allowedMethods())
